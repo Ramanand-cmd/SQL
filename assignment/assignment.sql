@@ -299,7 +299,33 @@ Example: REVOKE SELECT ON employees FROM 'user'@'localhost';
 --------------------------------------------------------------------------
 12) What is the role of the MySQL JOIN clause in a query, and what are some
 common types of joins?
+Ans:
+The JOIN clause in MySQL is used to combine rows from two or more tables based on a related column between them. 
+This is useful for retrieving data from multiple tables in a single query, 
+which is common in relational databases where information is spread across different tables.
 
+Here are the most common types of JOINs:
+
+INNER JOIN:
+Returns only the rows that have matching values in both tables.
+If there’s no match between the tables, the row is not included in the result.
+
+LEFT JOIN (or LEFT OUTER JOIN):
+Returns all rows from the left table, and the matching rows from the right table. 
+If there's no match, NULL values are returned for columns from the right table.
+
+RIGHT JOIN (or RIGHT OUTER JOIN):
+Similar to the LEFT JOIN, but returns all rows from the right table, and the matching rows from the left table.
+ If there's no match, NULL values are returned for columns from the left table.
+ 
+FULL JOIN (or FULL OUTER JOIN):
+Returns all rows when there’s a match in one of the tables.
+If there’s no match, NULL values are returned for the non-matching side.
+MySQL does not natively support FULL JOIN, but you can achieve it using a combination of LEFT JOIN and RIGHT JOIN with a UNION.
+
+CROSS JOIN:
+Returns the Cartesian product of the two tables, i.e., every row of the first table is combined with every row of the second table. 
+This can result in a large number of rows if both tables are large.
 
 */
 
